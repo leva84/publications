@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @publication_card %>
+
+<div>
+  <%= link_to "Edit this publication card", edit_publication_card_path(@publication_card) %> |
+  <%= link_to "Back to publication cards", publication_cards_path %>
+
+  <%= button_to "Destroy this publication card", @publication_card, method: :delete %>
+</div>
