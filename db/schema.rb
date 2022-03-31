@@ -12,7 +12,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_220_331_155_848) do
+ActiveRecord::Schema[7.0].define(version: 20_220_331_182_220) do
+  create_table 'messages', force: :cascade do |t|
+    t.text 'log'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'card_id'
+    t.index ['card_id'], name: 'index_messages_on_card_id'
+  end
+
   create_table 'publication_cards', force: :cascade do |t|
     t.string 'url'
     t.integer 'interval'
